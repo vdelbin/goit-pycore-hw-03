@@ -2,13 +2,13 @@ def normalize_phone(phone_number: str) -> str:
 
     cleaned_number = ""
 
+#ВИПРАВЛЕНО:
     for char in phone_number:
-        if char.isdigit() or char == "+":
+        if char.isdigit():
             cleaned_number += char
 
-    if cleaned_number.startswith("+"):
-        return cleaned_number
-    elif cleaned_number.startswith("380"):
+#ВИПРАВЛЕНО:
+    if cleaned_number.startswith("380"):
         return "+" + cleaned_number
     else:
         return "+38" + cleaned_number
@@ -19,6 +19,7 @@ raw_numbers = [
     "+380 44 123 4567",
     "380501234567",
     "    +38(050)123-32-34",
+    "    +38(050)12+++3-32-34",
     "     0503451234",
     "(050)8889900",
     "38050-111-22-22",
