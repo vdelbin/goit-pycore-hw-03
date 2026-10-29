@@ -2,7 +2,8 @@ from random import randint
 
 def get_numbers_ticket(min, max, quantity):
 
-    if  quantity < 1 or max > 1000 or min < 1 or quantity > max:
+#ВИПРАВЛЕНО:
+    if  quantity < 1 or max > 1000 or min < 1 or quantity > max - min + 1 or min >= max:
         return []
 
     unique_numbers = set()
@@ -13,4 +14,4 @@ def get_numbers_ticket(min, max, quantity):
 
     return sorted(list(unique_numbers))
 
-print(get_numbers_ticket(1,99,12))
+print(get_numbers_ticket(10,12,5))
